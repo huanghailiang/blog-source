@@ -12,7 +12,7 @@ tags: Ubuntu
 	http://www.downgle.com/zt/zqxouw0qwvstzrouysrloolz.html
 	http://blog.csdn.net/kenhins/article/details/51585565
 自己简单整理留作备份以备后期查看
-
+<!--more-->
 个人感觉用密钥登陆比用密码登陆安全很多，所以一旦生成密码之后一定不要将自己的密钥给别人，否者别人将很轻松的登陆你的账户，当然我发现如果你使用XShell远程连接ubuntu服务器的时候你可以再给密钥加上一层密码的。
 ## 密钥的生成
 这一步如果你使用XShell的话其实很简单，在上面的工具中有一个“新建用户密钥生成向导”，进去你自己一定会的，这里就不多说了
@@ -36,7 +36,7 @@ tags: Ubuntu
 	service sshd restart
 	
 #配置密钥
-由上面的配置文件我们可以看出来密钥放置的位置应该在用户根目录下的.ssh/authorized_keys中，如果系统本身就有authorize_keys，那么你就可以直接将你的公钥复制进来但是一般情况下刚装好的新机器没有这个目录，这就需要我们先生成一个
+由上面的配置文件我们可以看出来密钥放置的位置应该在用户根目录下的.ssh/authorized_keys中，如果系统本身就有authorize_keys，那么你就可以直接将你的公钥复制进来但是一般情况下刚装好的新机器没有这个目录，这就需要我们先生成一个(这里我们可以直接进入你要创建的账户去进行，可以使用指令 su 需要创建的用户名)
 
 	ssh-keygen
 输入该指令后一路回车即可
@@ -47,9 +47,9 @@ tags: Ubuntu
 你可以发现在当前用户的更目录下就会生成一个 .ssh的文件夹,然后再进入这个文件夹操作
 
 	cd ~/.ssh
-	vim authorize_keys
+	vim authorized_keys
 把自己生成的公钥复制进来就可以了
 然后保存，并且更改文件模式
 
-	chmod 600 authorize_keys
+	chmod 600 authorized_keys
 ### 注意：有些时候复制的时候可能不全，尤其前面缺少几个字母，这个需要自己检查一下，否则登陆会不成功的

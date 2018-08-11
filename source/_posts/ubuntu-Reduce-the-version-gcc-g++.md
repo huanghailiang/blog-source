@@ -10,6 +10,7 @@ tags: Ubuntu
 这里由于本人用的ubuntu16.04所以编译器自带的是gcc-5.4和g++-5.4,但是需要低版本的，经过测试现在还可以安装4.7的版本
 
 	sudo apt-get install gcc-4.7 gcc-4.7-multilib g++-4.7 g++-4.7-multilib
+<!--more-->
 # 配置级别
 	sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.7 50
 	sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 40

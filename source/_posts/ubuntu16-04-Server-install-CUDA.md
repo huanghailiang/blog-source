@@ -1,4 +1,4 @@
-﻿---
+---
 title: ubuntu16.04 Server install CUDA
 date: 2017-07-22 17:27:31
 tags: Ubuntu
@@ -9,6 +9,7 @@ tags: Ubuntu
 在安装CUDA的时候经常会遇到CUDA安装失败的情况，一般遇到的不允许第三方软件的安装，或者是自带的驱动nouveau的存在。
 ## 允许第三方软件的安装
 这个需要自己重启电脑进入bios系统中去关闭UEFI的安全启动/安全引导
+<!--more-->
 ## 关闭自带的驱动nouveau
 	sudo vim /etc/modprobe.d/blacklist.conf
 在该文件中添加以下几行：
@@ -39,7 +40,7 @@ tags: Ubuntu
 	sudo service lightdm stop
 打开图形界面的语句：
 
-	sudo service lightdm stop
+	sudo service lightdm start
 	
 nouveau禁用成功了，bios中的UEFI也已经关了，这个时候就可以安心的装CUDA了。
 首先需要安装依赖项：
@@ -58,7 +59,7 @@ nouveau禁用成功了，bios中的UEFI也已经关了，这个时候就可以�
 下载好后用U盘或者SCP等上传到服务器上，接下来进入cuda安装包的地方执行，当然这里根据你的安装包的型号。
 	
 	sudo sh cuda_8.0.61_375.26_linux.run
-执行以后会有一堆文本让你读，很多，不过可以直接按q退出，然后按照要求先accept，然后再按照自己的需求安装，因为上面没有手动安装过nvidia的驱动，所以这里需要选择安装驱动的，否者cuda即使安装上了也没有用的。选择完了就开始安装了，安装完成后会有一个Summary显示安装的情况的。
+执行以后会有一堆文本让你读，很多，不过可以直接按q退出，然后按照要求先accept，然后再按照自己的需求安装，因为上面没有手动安装过nvidia的驱动，所以这里需要选择安装驱动的，否则cuda即使安装上了也没有用的。选择完了就开始安装了，安装完成后会有一个Summary显示安装的情况的。
 ![这里写图片描述](http://img.blog.csdn.net/20170715165538644?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZGFycmVuODE3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 到此基本安装完了，可以使用下面的语句去检测nvidia驱动是否安装成功：
 	

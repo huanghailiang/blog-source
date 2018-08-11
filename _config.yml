@@ -1,19 +1,28 @@
-# Hexo Configuration
+﻿# Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: SRT
-subtitle: SRT note
+title: Darren
+subtitle: 海亮的笔记本
 description:
-author: srt
+author: Darren
 language: zh-Hans
 timezone:
+rss:
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+
+baidu_analytics: 231fa4da5d0b63da8e3d5e23b4e759f7
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com/srt
-root: /srt/
+url: https://huanghailiang.github.io
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -78,4 +87,45 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/huanghailiang/srt.git
+  repo: https://github.com/huanghailiang/huanghailiang.github.io.git
+  branch: master
+#https://github.com/huanghailiang/huanghailiang.github.io.git
+#git@github.com:huanghailiang/huanghailiang.github.io.git 
+# Sidebar Avatar
+# in theme directory(source/images): /images/avatar.jpg
+# in site  directory(source/uploads): /uploads/avatar.jpg
+avatar: /uploads/avatar.jpg
+
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+social:
+  GitHub: https://github.com/huanghailiang
+  CSDN: http://blog.csdn.net/darren817
+
+links_title: 友情链接
+links:
+  Jing: https://lj1995513.github.io/
+  Lilywei: https://lilywei888.github.io/
+  LiWei: http://blog.leanote.com/archives/529962784@qq.com
+  GongBingjian: http://blog.csdn.net/q583956932?viewmode=contents
+  BIYAO: http://blog.csdn.net/roger17?viewmode=contents
+  ZunJie: http://blog.csdn.net/u013270341
+  Cui: https://blog.csdn.net/c406495762?viewmode=contents
+  莫烦Python: https://morvanzhou.github.io/
+
+# Code Highlight theme
+# Available value:
+#    normal | night | night eighties | night blue | night bright
+# https://github.com/chriskempson/tomorrow-theme
+highlight_theme: normal
+
+favicon: /favicon.ico
+
+
+
+
+
